@@ -9,7 +9,10 @@ export default function Home() {
       <div className="flex items-center justify-center mb-6 flex-col">
         <QrCard />
         <Link href="/qrcodecard">
-          <h1 className="mt-4 "> See the version Desktop and movile</h1>
+          <h1 className="mt-4 "> See the qr card component</h1>
+        </Link>
+        <Link href="/blogpreview">
+          <h1 className="mt-4 "> See the Blog preview card</h1>
         </Link>
       </div>
     </div>

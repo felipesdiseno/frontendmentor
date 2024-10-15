@@ -4,7 +4,7 @@ function QrCard() {
   return (
     <div className="flex items-center flex-col  w-[320px] h-[499px]  rounded-3xl bg-white shadow-xl p-4">
       <div>
-        <img src="qr-code.png" alt="codigoQr" className="rounded-2xl" />
+        <img src="qrCard/qr-code.png" alt="codigoQr" className="rounded-2xl" />
       </div>
       <div>
         <p className="text-center font-bold text-xl text-[#1f314f]">

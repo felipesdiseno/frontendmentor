@@ -1,5 +1,5 @@
 import QrCard from "@/components/QrCard";
-
+import Link from "next/link";
 export default function Home() {
   return (
     <div className="flex items-center justify-center font-[family-name:var(--font-geist-sans)] flex-col bg-[#D5E1EF] ">
@@ -8,7 +8,9 @@ export default function Home() {
       </h1>
       <div className="flex items-center justify-center mb-6 flex-col">
         <QrCard />
-        <h1 className="mt-4 ">version Desktop and movile</h1>
+        <Link href="/qrcodecard">
+          <h1 className="mt-4 "> See the version Desktop and movile</h1>
+        </Link>
       </div>
     </div>
   );

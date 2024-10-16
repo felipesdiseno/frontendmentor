@@ -9,7 +9,7 @@ export default function Home() {
       <h1 className="text-3xl text-gray-500 font-bold mb-4 mt-2 mx-auto p-2 text-center">
         Projects carried out to complete the frontend mentor challenge
       </h1>
-      <div className="flex flex-row gap-4 items-center justify-center">
+      <div className="flex flex-row gap-6 items-center justify-center">
         <div className="flex items-center justify-center mb-6 flex-col gap-6">
           <QrCard />
           <Button variant="outline">

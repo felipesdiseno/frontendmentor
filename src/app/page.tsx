@@ -2,6 +2,7 @@ import BlogPreviewCard from "@/components/BlogCardPreview";
 import QrCard from "@/components/QrCard";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
+import ProfileLinkCard from "@/components/ProfileLinksCard";
 export default function Home() {
   return (
     <div className="flex items-center justify-center font-[family-name:var(--font-geist-sans)] flex-col bg-[#D5E1EF] ">
@@ -20,6 +21,13 @@ export default function Home() {
 
           <Button variant="outline">
             <Link href="/blogpreview">See the Blog preview card</Link>
+          </Button>
+        </div>
+        <div className="flex items-center justify-center mb-6 flex-col gap-6">
+          <ProfileLinkCard />
+
+          <Button variant="outline">
+            <Link href="/socialprofile">See my profile links</Link>
           </Button>
         </div>
       </div>

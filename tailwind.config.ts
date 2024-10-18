@@ -9,6 +9,10 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        outfit: ["Outfit", "sans-serif"],
+        youngSerif: ["Young Serif", "serif"],
+      },
       screens: {
         // sm: "375px",
         // md: '1440px'

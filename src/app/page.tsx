@@ -4,6 +4,7 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import ProfileLinkCard from "@/components/ProfileLinksCard";
 import RecipeComponent from "@/components/recipeComponent";
+import TestimonialGridComponent from "@/components/TestimonialGrid";
 
 export default function Home() {
   return (
@@ -44,15 +45,20 @@ export default function Home() {
         </div>
       </div>
       <div className="flex flex-col items-center">
-        <h1 className="text-3xl text-gray-700 font-bold mb-8 text-center">
-          recipe component
-        </h1>
-        <RecipeComponent />
-        <Button variant="outline" className="w-full max-w-[200px] mt-4">
-          <Link href="/recipepage" className="w-full text-center">
-            Ver receta
-          </Link>
-        </Button>
+        <div className="flex flex-col items-center">
+          <h1 className="text-3xl text-gray-700 font-bold mb-8 text-center">
+            recipe component
+          </h1>
+          <RecipeComponent />
+          <Button variant="outline" className="w-full max-w-[200px] mt-4">
+            <Link href="/recipepage" className="w-full text-center">
+              Ver receta
+            </Link>
+          </Button>
+        </div>
+        <div>
+          <TestimonialGridComponent />
+        </div>
       </div>
     </div>
   );

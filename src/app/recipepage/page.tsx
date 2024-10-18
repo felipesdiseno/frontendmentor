@@ -1,20 +1,19 @@
 import React from "react";
-import QrCard from "@/components/QrCard";
+import RecipeComponent from "@/components/recipeComponent";
 import { IoHome } from "react-icons/io5";
 import Link from "next/link";
-function QrCardPage() {
+function RecipePafe() {
   return (
-    <div className="flex items-center flex-col first:justify-center bg-[#D5E1EF] h-screen mb-10 p-1">
+    <div className="bg-[#f3e5d8] flex items-center justify-center p-2">
       <div className="absolute top-4 right-6 p-2 rounded-full bg-gray-400 text-white  hover:bg-gray-500 hover:cursor-pointer transform hover:scale-110 ease-in-out">
         <Link href="/">
-          <IoHome className="text-3xl e" />
+          <IoHome className="text-3xl" />
         </Link>
       </div>
-      <div className="">
-        <QrCard />
-      </div>
+
+      <RecipeComponent />
     </div>
   );
 }
 
-export default QrCardPage;
+export default RecipePafe;

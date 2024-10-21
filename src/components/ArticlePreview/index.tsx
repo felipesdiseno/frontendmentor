@@ -12,16 +12,16 @@ function ArticlePreviewComponent() {
         className="rounded-l-xl"
       />
       <div className="flex flex-col ml-6">
-        <p className="font-bold text-xl cursor-default">
+        <p className="font-bold text-xl cursor-default text-[#48556A]">
           Shift the overall look and feel by adding these wonderful touches to
           furniture in your home
         </p>
-        <p className="text-[13.5px] cursor-default">
+        <p className="text-[13.5px] cursor-default text-[#6D7F97]">
           Ever been in a room and felt like something was missing? Perhaps it
           felt slightly bare and uninviting. I’ve got some simple tips to help
           you make any room feel complete.
         </p>
-        <div className="flex flex-row items-center justify-between mr-6">
+        <div className="flex flex-row items-center justify-between mr-6 mt-4">
           <div className="flex flex-row">
             <img
               src="articlePreview/avatar-michelle.jpg"

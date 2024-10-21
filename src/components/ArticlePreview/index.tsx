@@ -1,9 +1,11 @@
-import React from "react";
+"use client";
+import React, { useState } from "react";
 import { IoMdShareAlt } from "react-icons/io";
-import SharePop from "./sharePop";
+import SharePop from "@/components/ArticlePreview/sharePop";
 function ArticlePreviewComponent() {
+  const [sharePop, setSharePop] = useState(false);
   return (
-    <div className=" flex flex-row w-[730px] h-[280px] rounded-xl shadow-xl ">
+    <div className=" flex flex-row w-[730px] h-[280px] rounded-xl shadow-xl relative ">
       <img
         src="articlePreview/drawers.jpg"
         alt="drawers"
@@ -33,12 +35,17 @@ function ArticlePreviewComponent() {
               <h3 className="text-[#9EAFC2] cursor-default">21 Oct 2024</h3>
             </div>
           </div>
-          <div className="bg-[#9EAFC2] rounded-full p-1 hover:bg-[#6E8098] cursor-pointer">
-            <IoMdShareAlt className="text-white" />
+          <div className="relative">
+            <div
+              className="bg-[#9EAFC2] rounded-full p-1 hover:bg-[#6E8098] cursor-pointer"
+              onClick={() => setSharePop(!sharePop)}
+            >
+              <IoMdShareAlt className="text-white" />
+            </div>
+            {sharePop && <SharePop />}
           </div>
         </div>
       </div>
-      <SharePop />
     </div>
   );
 }

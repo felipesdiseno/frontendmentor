@@ -12,6 +12,7 @@ const config: Config = {
       fontFamily: {
         outfit: ["Outfit", "sans-serif"],
         youngSerif: ["Young Serif", "serif"],
+        manrope: ["Manrope", "sans-serif"],
       },
       screens: {
         // sm: "375px",

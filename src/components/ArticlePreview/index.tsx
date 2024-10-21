@@ -5,14 +5,14 @@ import SharePop from "@/components/ArticlePreview/sharePop";
 function ArticlePreviewComponent() {
   const [sharePop, setSharePop] = useState(false);
   return (
-    <div className=" flex flex-row w-[730px] h-[280px] rounded-xl shadow-xl relative ">
+    <div className=" flex md:flex-row sm:flex-col md:w-[730px] md:h-[280px] sm:w-[375px] sm:h-[667px] rounded-xl shadow-xl relative ">
       <img
         src="articlePreview/drawers.jpg"
         alt="drawers"
         className="rounded-l-xl"
       />
       <div className="flex flex-col ml-6">
-        <p className="font-bold text-xl cursor-default text-[#48556A]">
+        <p className="font-bold text-xl cursor-default text-[#48556A] font-manrope">
           Shift the overall look and feel by adding these wonderful touches to
           furniture in your home
         </p>
@@ -21,7 +21,7 @@ function ArticlePreviewComponent() {
           felt slightly bare and uninviting. I’ve got some simple tips to help
           you make any room feel complete.
         </p>
-        <div className="flex flex-row items-center justify-between mr-6 mt-4">
+        <div className="flex md:flex-row sm:flex-col items-center justify-between mr-6 mt-4">
           <div className="flex flex-row">
             <img
               src="articlePreview/avatar-michelle.jpg"
@@ -32,7 +32,9 @@ function ArticlePreviewComponent() {
               <h3 className="text-[#48556A] font-bold cursor-default">
                 Michelle Appleton
               </h3>
-              <h3 className="text-[#9EAFC2] cursor-default">21 Oct 2024</h3>
+              <h3 className="text-[#9EAFC2] cursor-default font-manrope">
+                21 Oct 2024
+              </h3>
             </div>
           </div>
           <div className="relative">

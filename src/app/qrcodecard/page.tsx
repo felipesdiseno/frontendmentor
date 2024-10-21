@@ -7,10 +7,11 @@ function QrCardPage() {
     <div className="flex items-center flex-col first:justify-center bg-[#D5E1EF] h-screen mb-10 p-1">
       <div className="absolute top-4 right-6 p-2 rounded-full bg-gray-400 text-white  hover:bg-gray-500 hover:cursor-pointer transform hover:scale-110 ease-in-out">
         <Link href="/">
-          <IoHome className="text-3xl e" />
+          <IoHome className="text-3xl" />
         </Link>
       </div>
-      <div className="">
+
+      <div>
         <QrCard />
       </div>
     </div>

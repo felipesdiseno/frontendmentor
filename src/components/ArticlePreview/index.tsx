@@ -2,31 +2,32 @@
 import React, { useState } from "react";
 import { IoMdShareAlt } from "react-icons/io";
 import SharePop from "@/components/ArticlePreview/sharePop";
+
 function ArticlePreviewComponent() {
   const [sharePop, setSharePop] = useState(false);
   return (
-    <div className=" flex md:flex-row sm:flex-col md:w-[730px] md:h-[280px] sm:w-[375px] sm:h-[667px] rounded-xl shadow-xl relative ">
+    <div className="flex flex-col md:flex-row rounded-xl shadow-xl relative w-full max-w-[730px]">
       <img
         src="articlePreview/drawers.jpg"
         alt="drawers"
-        className="rounded-l-xl"
+        className="md:rounded-l-xl w-full h-auto md:w-[50%]"
       />
-      <div className="flex flex-col ml-6">
-        <p className="font-bold text-xl cursor-default text-[#48556A] font-manrope">
+      <div className="flex flex-col p-4 md:ml-6">
+        <p className="font-bold text-xl md:text-2xl cursor-default text-[#48556A] font-manrope mb-4">
           Shift the overall look and feel by adding these wonderful touches to
           furniture in your home
         </p>
-        <p className="text-[13.5px] cursor-default text-[#6D7F97]">
+        <p className="text-sm md:text-base cursor-default text-[#6D7F97] mb-4">
           Ever been in a room and felt like something was missing? Perhaps it
           felt slightly bare and uninviting. I’ve got some simple tips to help
           you make any room feel complete.
         </p>
-        <div className="flex md:flex-row sm:flex-col items-center justify-between mr-6 mt-4">
-          <div className="flex flex-row">
+        <div className="flex flex-row items-center justify-between mt-4 ">
+          <div className="flex flex-row items-center mb-4 md:mb-0">
             <img
               src="articlePreview/avatar-michelle.jpg"
               alt="avatar"
-              className="w-[39px] h-[39px] rounded-full"
+              className="w-10 h-10 rounded-full"
             />
             <div className="flex flex-col ml-2">
               <h3 className="text-[#48556A] font-bold cursor-default">
@@ -39,7 +40,7 @@ function ArticlePreviewComponent() {
           </div>
           <div className="relative">
             <div
-              className="bg-[#9EAFC2] rounded-full p-1 hover:bg-[#6E8098] cursor-pointer"
+              className="bg-[#9EAFC2] rounded-full p-2 hover:bg-[#6E8098] cursor-pointer"
               onClick={() => setSharePop(!sharePop)}
             >
               <IoMdShareAlt className="text-white" />

@@ -1,5 +1,7 @@
 "use client";
+
 import React, { useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -18,98 +20,120 @@ import BlogPreviewCard from "@/components/BlogCardPreview";
 import QrCard from "@/components/QrCard";
 import ProfileLinkCard from "@/components/ProfileLinksCard";
 import RecipeComponent from "@/components/recipeComponent";
+import ArticlePreviewComponent from "@/components/ArticlePreview";
 import TestimonialGridComponent from "@/components/TestimonialGrid";
 
-const components = [
+const componentes = [
   {
-    name: "QR Card",
-    component: QrCard,
-    link: "/qrcodecard",
-    description: "A simple QR code component",
-    tags: ["QR", "Card"],
+    nombre: "Tarjeta QR",
+    componente: QrCard,
+    enlace: "/qrcodecard",
+    descripcion: "Un componente simple de código QR",
+    etiquetas: ["QR", "Tarjeta"],
+    imagen: "/imagepreview/qrcard.png",
   },
   {
-    name: "Blog Preview",
-    component: BlogPreviewCard,
-    link: "/blogpreview",
-    description: "A preview card for blog posts",
-    tags: ["Blog", "Card"],
+    nombre: "Vista previa de Blog",
+    componente: BlogPreviewCard,
+    enlace: "/blogpreview",
+    descripcion: "Una tarjeta de vista previa para entradas de blog",
+    etiquetas: ["Blog", "Tarjeta"],
+    imagen: "/imagepreview/blogpreview.png",
   },
   {
-    name: "Profile Links",
-    component: ProfileLinkCard,
-    link: "/socialprofile",
-    description: "A card displaying social profile links",
-    tags: ["Profile", "Social"],
+    nombre: "Enlaces de Perfil",
+    componente: ProfileLinkCard,
+    enlace: "/socialprofile",
+    descripcion: "Una tarjeta que muestra enlaces de perfil social",
+    etiquetas: ["Perfil", "Social"],
+    imagen: "/imagepreview/socialprofile.png",
   },
   {
-    name: "Recipe",
-    component: RecipeComponent,
-    link: "/recipepage",
-    description: "A component displaying a recipe",
-    tags: ["Recipe", "Food"],
+    nombre: "Receta",
+    componente: RecipeComponent,
+    enlace: "/recipepage",
+    descripcion: "Tarjeta para pagina de recetas",
+    etiquetas: ["Receta", "Comida"],
+    imagen: "/imagepreview/recipe.png",
   },
   {
-    name: "Testimonial Grid",
-    component: TestimonialGridComponent,
-    link: "/testimonialpage",
-    description: "A grid layout of testimonials",
-    tags: ["Testimonial", "Grid"],
+    nombre: "Opiniones destacadas",
+    componente: TestimonialGridComponent,
+    enlace: "/testimonialpage",
+    descripcion: "Diseño asimetrico para sesión de opiniones",
+    etiquetas: ["Testimonio", "Grid"],
+    imagen: "/imagepreview/testimonial.png",
+  },
+  {
+    nombre: "Vista previa de Artículo",
+    componente: ArticlePreviewComponent,
+    enlace: "/articlepreview",
+    descripcion: "Una vista previa de un artículo o entrada de blog",
+    etiquetas: ["Artículo", "Vista previa", "Blog"],
+    imagen: "/imagepreview/articlepreview.png",
   },
 ];
 
 export default function Home() {
-  const [filter, setFilter] = useState("");
+  const [filtro, setFiltro] = useState("");
 
-  const filteredComponents = components.filter(
+  const componentesFiltrados = componentes.filter(
     (comp) =>
-      comp.name.toLowerCase().includes(filter.toLowerCase()) ||
-      comp.tags.some((tag) => tag.toLowerCase().includes(filter.toLowerCase()))
+      comp.nombre.toLowerCase().includes(filtro.toLowerCase()) ||
+      comp.etiquetas.some((etiqueta) =>
+        etiqueta.toLowerCase().includes(filtro.toLowerCase())
+      )
   );
 
   return (
-    <div className="min-h-screen bg-gray-100 p-8">
-      <h1 className="text-4xl font-bold text-center mb-8">
-        Frontend Mentor Challenge Components
+    <div className="min-h-screen bg-gray-100 p-4 sm:p-8">
+      <h1 className="text-3xl sm:text-4xl font-bold text-center mb-8">
+        Componentes de Frontend Mentor Challenge
       </h1>
       <Input
         type="text"
-        placeholder="Filter components..."
-        value={filter}
-        onChange={(e) => setFilter(e.target.value)}
-        className="max-w-md mx-auto mb-8"
+        placeholder="Filtrar componentes..."
+        value={filtro}
+        onChange={(e) => setFiltro(e.target.value)}
+        className="max-w-md mx-auto mb-8 rounded-xl bg-transparent p-4 shadow-md border border-gray-400 text-gray-400"
       />
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {filteredComponents.map((comp, index) => (
-          <Card key={index} className="flex flex-col">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {componentesFiltrados.map((comp, index) => (
+          <Card key={index} className="flex flex-col overflow-hidden">
             <CardHeader>
-              <CardTitle>{comp.name}</CardTitle>
+              <CardTitle className="text-xl">{comp.nombre}</CardTitle>
             </CardHeader>
-            <CardContent className="flex-grow">
-              <div className="aspect-w-16 aspect-h-9 mb-4">
-                <Dialog>
-                  <DialogTrigger asChild>
-                    <div className="w-full h-full flex items-center justify-center  rounded-md cursor-pointer">
-                      <comp.component />
-                    </div>
-                  </DialogTrigger>
-                  <DialogContent className="w-full max-w-4xl">
-                    <comp.component />
-                  </DialogContent>
-                </Dialog>
-              </div>
-              <p className="text-sm text-gray-600 mb-2">{comp.description}</p>
-              <div className="flex flex-wrap gap-2">
-                {comp.tags.map((tag, i) => (
-                  <Badge key={i} variant="secondary">
-                    {tag}
-                  </Badge>
-                ))}
+            <CardContent className="flex-grow p-0">
+              <Dialog>
+                <DialogTrigger asChild>
+                  <div className="relative w-full h-48 cursor-pointer overflow-hidden">
+                    <Image
+                      src={comp.imagen}
+                      alt={`Vista previa de ${comp.nombre}`}
+                      layout="fill"
+                      objectFit="contain"
+                      className="transition-transform duration-300 hover:scale-105"
+                    />
+                  </div>
+                </DialogTrigger>
+                <DialogContent className="w-full max-w-4xl max-h-[80vh] overflow-auto">
+                  <comp.componente />
+                </DialogContent>
+              </Dialog>
+              <div className="p-4">
+                <p className="text-sm text-gray-600 mb-2">{comp.descripcion}</p>
+                <div className="flex flex-wrap gap-2">
+                  {comp.etiquetas.map((etiqueta, i) => (
+                    <Badge key={i} variant="secondary">
+                      {etiqueta}
+                    </Badge>
+                  ))}
+                </div>
               </div>
             </CardContent>
             <CardFooter>
-              <Button variant={"outline"} asChild className="w-full">
-                <Link href={comp.link}>View Full Page</Link>
+              <Button variant="outline" asChild className="w-full">
+                <Link href={comp.enlace}>Ver Página Completa</Link>
               </Button>
             </CardFooter>
           </Card>

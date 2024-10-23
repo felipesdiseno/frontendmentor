@@ -10,7 +10,7 @@ function ArticlePreviewComponent() {
   const handleShareClick = () => setSharePop(!sharePop);
 
   return (
-    <div className="flex flex-col md:flex-row rounded-xl shadow-xl relative w-full max-w-[730px] pb-[120px] md:pb-0">
+    <div className="flex flex-col md:flex-row rounded-xl bg-white shadow-xl relative w-full max-w-[730px] pb-[120px] md:pb-0">
       <img
         src="articlePreview/drawers.jpg"
         alt="drawers"

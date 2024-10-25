@@ -1,11 +1,11 @@
 "use client";
+
 import PricingwToggle from "@/components/pricingcomponent";
 import { Switch } from "@/components/ui/switch";
-import React from "react";
-import { useState } from "react";
-import IPrincing from "../../../interfaces/Iprincing";
+import React, { useState } from "react";
+import IPricing from "../../../interfaces/Iprincing";
 
-const cardIformation: IPrincing[] = [
+const cardInformation: IPricing[] = [
   {
     pack: "Basic",
     priceMonth: "19.99",
@@ -31,40 +31,54 @@ const cardIformation: IPrincing[] = [
     send: "Send up to 20 GB",
   },
 ];
-function PrincingPage() {
-  const [toggle, setToggle] = useState(false);
+
+function PricingPage() {
+  const [isAnnual, setIsAnnual] = useState(false);
+
   const handleToggle = () => {
-    setToggle(!toggle);
+    setIsAnnual((prev) => !prev);
   };
+
   return (
-    <div className="flex items-center justify-center h-screen flex-col bg-blue-300">
-      <h1 className="font-bold text-[30px] text-[#6D708D] ">Our Pricing</h1>
-      <div className="flex flex-row items-center gap-6">
-        <h3>Anually</h3>
+    <div className="flex items-center justify-center min-h-screen flex-col bg-blue-300 p-4">
+      <h1 className="font-bold text-3xl text-[#6D708D] mb-8">Our Pricing</h1>
+      <div className="flex flex-row items-center gap-6 mb-8">
+        <h3 className="text-sm font-medium">Monthly</h3>
         <Switch
-          className=" bg-[#797EE2]"
-          checked={toggle}
+          className="bg-[#797EE2]"
+          checked={isAnnual}
           onCheckedChange={handleToggle}
         />
-        <h3>Monthly</h3>
+        <h3 className="text-sm font-medium">Annually</h3>
       </div>
-      <div className="flex flex-row gap-6">
-        {cardIformation.map((info, index) => (
-          <div className="mt-6 " key={index}>
-            <PricingwToggle
-              key={index}
-              pack={info.pack}
-              priceMonth={toggle ? info.priceYear : info.priceMonth}
-              priceYear={info.priceYear}
-              storage={info.storage}
-              users={info.users}
-              send={info.send}
-            />
-          </div>
+      <div className="flex flex-col md:flex-row gap-6 justify-center items-center">
+        {cardInformation.map((info, index) => (
+          <PricingwToggle
+            key={index}
+            pack={info.pack}
+            priceMonth={isAnnual ? info.priceYear : info.priceMonth}
+            priceYear={info.priceYear}
+            storage={info.storage}
+            users={info.users}
+            send={info.send}
+            className={`
+              p-4 rounded-lg shadow-lg transition-all duration-300
+              ${
+                info.pack === "Professional"
+                  ? "bg-gradient-to-b from-[#A2A7F0] to-[#696EDD] text-white md:scale-105 md:shadow-xl"
+                  : "bg-white"
+              }
+              ${
+                info.pack === "Professional"
+                  ? "md:w-[324px] md:h-[503px] sm:w-[337.5px] sm:h-[423px]"
+                  : "md:w-[300px] md:h-[450px]"
+              }
+            `}
+          />
         ))}
       </div>
     </div>
   );
 }
 
-export default PrincingPage;
+export default PricingPage;

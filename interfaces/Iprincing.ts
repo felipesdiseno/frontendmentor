@@ -1,4 +1,4 @@
-interface IPrincing {
+interface IPricing {
   pack: string;
   priceMonth: string;
   priceYear: string;
@@ -7,4 +7,4 @@ interface IPrincing {
   send: string;
   key?: string | number;
 }
-export default IPrincing;
+export default IPricing;

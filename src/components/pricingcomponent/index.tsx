@@ -1,13 +1,10 @@
 import React from "react";
 import { Button } from "../ui/button";
-import IPrincing from "../../../interfaces/Iprincing";
+import IPricing from "../../../interfaces/Iprincing";
 
-// if (toggle === "on") {
-//   return cardInformation.map((card) => card.priceMonth); // Retorna los precios mensuales
-// } else {
-//   return cardInformation.map((card) => card.priceYear); // Retorna los precios anuales
-// }
-
+interface PricingwToggleProps extends IPricing {
+  className?: string;
+}
 function PricingwToggle({
   pack,
   priceMonth,
@@ -15,10 +12,13 @@ function PricingwToggle({
   storage,
   users,
   send,
-}: IPrincing) {
+}: PricingwToggleProps) {
+  const isProfessional = pack === "Professional";
   return (
     <div className="flex flex-col items-center justify-center bg-gradient-to-b from-[#A0A5EF] to-[#6B70DD] p-4 rounded-xl">
-      <h3>{pack}</h3>
+      <h3 className={isProfessional ? "text-white" : "text-[#6D708D]"}>
+        {pack}
+      </h3>
       <div className="flex flex-row items-center justify-center border-b-2 w-full border-[#D9DAE2] text-white">
         <h3 className="font-bold text-[37.5px]">$</h3>
         <h1 className="font-bold text-[69px]">{priceMonth}</h1>

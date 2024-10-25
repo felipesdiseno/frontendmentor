@@ -38,7 +38,7 @@ function PrincingPage() {
   };
   return (
     <div className="flex items-center justify-center h-screen flex-col bg-blue-300">
-      <h1 className="text-3xl font-bold">Our Pricing</h1>
+      <h1 className="font-bold text-[30px] text-[#6D708D] ">Our Pricing</h1>
       <div className="flex flex-row items-center gap-6">
         <h3>Anually</h3>
         <Switch
@@ -48,19 +48,21 @@ function PrincingPage() {
         />
         <h3>Monthly</h3>
       </div>
-      {cardIformation.map((info, index) => (
-        <div className="flex  gap-6 mt-6">
-          <PricingwToggle
-            key={index}
-            title={info.pack}
-            priceMonth={toggle ? info.priceYear : info.priceMonth}
-            priceYear={info.priceYear}
-            storage={info.storage}
-            users={info.users}
-            send={info.send}
-          />
-        </div>
-      ))}
+      <div className="flex flex-row gap-6">
+        {cardIformation.map((info, index) => (
+          <div className="mt-6 " key={index}>
+            <PricingwToggle
+              key={index}
+              pack={info.pack}
+              priceMonth={toggle ? info.priceYear : info.priceMonth}
+              priceYear={info.priceYear}
+              storage={info.storage}
+              users={info.users}
+              send={info.send}
+            />
+          </div>
+        ))}
+      </div>
     </div>
   );
 }

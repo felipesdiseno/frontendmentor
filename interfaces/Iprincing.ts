@@ -2,11 +2,9 @@ interface IPrincing {
   pack: string;
   priceMonth: string;
   priceYear: string;
-  description: string;
   storage: string;
   users: string;
   send: string;
-  key?: string;
-  pricing: string[];
+  key?: string | number;
 }
 export default IPrincing;

@@ -92,8 +92,16 @@ function PricingwToggle({
           {send}
         </h2>
       </div>
-      <div className="flex flex-col items-center justify-center">
-        <Button className="bg-[#F9F9F9] hover:text-white text-[#6C71DE] hover:bg-[#6C71DE] hover: border border-white rounded-xl mt-4">
+      <div className="flex flex-col items-center justify-center mt-4">
+        <Button
+          className={`w-full rounded-xl mb-4  ${
+            isProfessional
+              ? " text-[#6C71DE] bg-white border border-white hover:border-white hover:text-white hover:bg-[#6C71DE]"
+              : "text-white bg-[#6C71DE] border border-transparent hover:bg-white hover:border-[#6C71DE] hover:text-[#6C71DE] rounded-xl"
+          }
+            
+          `}
+        >
           LEARN MORE
         </Button>
       </div>

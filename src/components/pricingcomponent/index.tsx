@@ -4,39 +4,99 @@ import IPricing from "../../../interfaces/Iprincing";
 
 interface PricingwToggleProps extends IPricing {
   className?: string;
+  isProfessional?: boolean;
 }
 function PricingwToggle({
   pack,
   priceMonth,
-  priceYear,
+
   storage,
   users,
   send,
+  isProfessional,
 }: PricingwToggleProps) {
-  const isProfessional = pack === "Professional";
   return (
-    <div className="flex flex-col items-center justify-center bg-gradient-to-b from-[#A0A5EF] to-[#6B70DD] p-4 rounded-xl">
-      <h3 className={isProfessional ? "text-white" : "text-[#6D708D]"}>
+    <div
+      className={`p-4 rounded-xl shadow-lg transition-all duration-300
+        ${
+          isProfessional
+            ? "bg-gradient-to-b from-[#A2A7F0] to-[#696EDD] text-white md:scale-105 md:shadow-xl"
+            : "bg-white"
+        } 
+        ${
+          isProfessional
+            ? "md:w-[324px] md:h-[503px] sm:w-[337.5px] sm:h-[423px]"
+            : "md:w-[300px] md:h-[450px]"
+        }
+      `}
+    >
+      <h3
+        className={
+          isProfessional
+            ? "text-white font-bold text-center text-[18.5px]"
+            : "text-[#6D708D] font-bold text-center text-[18.5px]"
+        }
+      >
         {pack}
       </h3>
       <div className="flex flex-row items-center justify-center border-b-2 w-full border-[#D9DAE2] text-white">
-        <h3 className="font-bold text-[37.5px]">$</h3>
-        <h1 className="font-bold text-[69px]">{priceMonth}</h1>
+        <h3
+          className={
+            isProfessional
+              ? "font-bold text-[37.5px] text-white"
+              : "font-bold text-[37.5px] text-[#B3B5C5]"
+          }
+        >
+          $
+        </h3>
+        <h1
+          className={
+            isProfessional
+              ? "mb-6 text-[69px] text-white font-bold mt-6"
+              : "mb-6 text-[69px] text-[#B3B5C5] font-bold mt-6"
+          }
+        >
+          {priceMonth}
+        </h1>
       </div>
       <div className="border-b-2 w-full border-[#D9DAE2] flex justify-center">
-        <h2 className="mb-6 text-[15px] text-white font-bold mt-6">
+        <h2
+          className={
+            isProfessional
+              ? "mb-6 text-[15.9px] text-white font-bold mt-6"
+              : "mb-6 text-[15p.9px] text-[#B3B5C5] font-bold mt-6"
+          }
+        >
           {storage}
         </h2>
       </div>
       <div className="border-b-2 w-full border-[#D9DAE2]  flex justify-center">
-        <h2 className="mb-6 text-[15px] text-white font-bold mt-6">{users}</h2>
+        <h2
+          className={
+            isProfessional
+              ? "mb-6 text-[15.9px] text-white font-bold mt-6"
+              : "mb-6 text-[15p.9px] text-[#B3B5C5] font-bold mt-6"
+          }
+        >
+          {users}
+        </h2>
       </div>
       <div className="border-b-2 w-full border-[#D9DAE2] flex justify-center">
-        <h2 className="mb-6 text-[15px] text-white font-bold mt-6">{send}</h2>
+        <h2
+          className={
+            isProfessional
+              ? "mb-6 text-[15.9px] text-white font-bold mt-6"
+              : "mb-6 text-[15p.9px] text-[#B3B5C5] font-bold mt-6"
+          }
+        >
+          {send}
+        </h2>
       </div>
-      <Button className="bg-[#F9F9F9] hover:text-white text-[#6C71DE] hover:bg-[#6C71DE] hover: border border-white rounded-xl mt-4">
-        LEARN MORE
-      </Button>
+      <div className="flex flex-col items-center justify-center">
+        <Button className="bg-[#F9F9F9] hover:text-white text-[#6C71DE] hover:bg-[#6C71DE] hover: border border-white rounded-xl mt-4">
+          LEARN MORE
+        </Button>
+      </div>
     </div>
   );
 }

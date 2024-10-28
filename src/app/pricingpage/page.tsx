@@ -36,16 +36,16 @@ function PricingPage() {
   const [isAnnual, setIsAnnual] = useState(false);
 
   const handleToggle = () => {
-    setIsAnnual((prev) => !prev);
+    setIsAnnual(!isAnnual);
   };
 
   return (
     <div className="flex items-center justify-center min-h-screen flex-col bg-blue-300 p-4">
       <h1 className="font-bold text-3xl text-[#6D708D] mb-8">Our Pricing</h1>
       <div className="flex flex-row items-center gap-6 mb-8">
-        <h3 className="text-sm font-medium">Monthly</h3>
-        <Switch checked={isAnnual} onCheckedChange={handleToggle} />
         <h3 className="text-sm font-medium">Annually</h3>
+        <Switch checked={isAnnual} onCheckedChange={handleToggle} />
+        <h3 className="text-sm font-medium">Monthly</h3>
       </div>
       <div className="flex flex-col md:flex-row  sm:flex-col gap-6 justify-center items-center">
         {cardInformation.map((info, index) => (
@@ -53,6 +53,7 @@ function PricingPage() {
             key={index}
             {...info}
             isProfessional={info.pack === "Professional"}
+            isAnnual={isAnnual}
           />
         ))}
       </div>

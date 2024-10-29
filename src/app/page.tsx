@@ -16,13 +16,13 @@ import {
 import { Badge } from "@/components/ui/badge";
 
 // Importa todos tus componentes aquí
-import BlogPreviewCard from "@/components/BlogCardPreview";
-import QrCard from "@/components/QrCard";
-import ProfileLinkCard from "@/components/ProfileLinksCard";
-import RecipeComponent from "@/components/recipeComponent";
 import ArticlePreviewComponent from "@/components/ArticlePreview";
+import BlogPreviewCard from "@/components/BlogCardPreview";
+import ProfileLinkCard from "@/components/ProfileLinksCard";
+import PricingwToggle from "@/components/pricingcomponent";
+import QrCard from "@/components/QrCard";
+import RecipeComponent from "@/components/recipeComponent";
 import TestimonialGridComponent from "@/components/TestimonialGrid";
-
 const componentes = [
   {
     nombre: "Tarjeta QR",
@@ -65,12 +65,26 @@ const componentes = [
     imagen: "/imagepreview/testimonial.png",
   },
   {
-    nombre: "Vista previa de Artículo",
+    nombre: "Vista previa de un Artículo",
     componente: ArticlePreviewComponent,
     enlace: "/articlepreview",
     descripcion: "Una vista previa de un artículo o entrada de blog",
     etiquetas: ["Artículo", "Vista previa", "Blog"],
     imagen: "/imagepreview/articlepreview.png",
+  },
+  {
+    nombre: "Tarjeta de promociones",
+    componente: PricingwToggle,
+    enlace: "/pricingpage",
+    descripcion: "Vista previa de una tarjeta para promociones",
+    etiquetas: [
+      "Artículo",
+      "Vista previa",
+      "Blog",
+      "promociones",
+      "landing page",
+    ],
+    imagen: "/pricingToggle/pricingCard.png",
   },
 ];
 

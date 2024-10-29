@@ -4,7 +4,8 @@ import PricingwToggle from "@/components/pricingcomponent";
 import { Switch } from "@/components/ui/switch";
 import React, { useState } from "react";
 import IPricing from "../../../interfaces/Iprincing";
-import Image from "next/image";
+import Link from "next/link";
+import { IoHome } from "react-icons/io5";
 const cardInformation: IPricing[] = [
   {
     pack: "Basic",
@@ -65,6 +66,11 @@ function PricingPage() {
               isAnnual={isAnnual}
             />
           ))}
+        </div>
+        <div className="absolute top-4 right-0 p-2 rounded-full bg-gray-400 text-white  hover:bg-gray-500 hover:cursor-pointer transform hover:scale-110 ease-in-out">
+          <Link href="/">
+            <IoHome className="text-3xl" />
+          </Link>
         </div>
       </div>
     </div>

@@ -23,6 +23,7 @@ import PricingwToggle from "@/components/pricingcomponent";
 import QrCard from "@/components/QrCard";
 import RecipeComponent from "@/components/recipeComponent";
 import TestimonialGridComponent from "@/components/TestimonialGrid";
+import TimeTRackingC from "@/components/TimeTracking";
 const componentes = [
   {
     nombre: "Tarjeta QR",
@@ -93,6 +94,14 @@ const componentes = [
       users: "1 usuario",
       send: true,
     },
+  },
+  {
+    nombre: "Vista previa de ---",
+    componente: TimeTRackingC,
+    enlace: "/trackingtimepage",
+    descripcion: "Una vista previa de un artículo o entrada de blog",
+    etiquetas: ["Artículo", "Vista previa", "Blog"],
+    imagen: "",
   },
 ];
 

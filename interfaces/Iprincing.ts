@@ -4,7 +4,7 @@ interface IPricing {
   priceYear: string;
   storage: string;
   users: string;
-  send: string;
+  send?: string;
   key?: string | number;
 }
 export default IPricing;

@@ -85,6 +85,14 @@ const componentes = [
       "landing page",
     ],
     imagen: "/pricingToggle/pricingCard.png",
+    props: {
+      pack: "Basic",
+      priceMonth: 9.99,
+      priceYear: 99.99,
+      storage: "1GB",
+      users: "1 usuario",
+      send: true,
+    },
   },
 ];
 
@@ -131,7 +139,13 @@ export default function Home() {
                   </div>
                 </DialogTrigger>
                 <DialogContent className="w-full max-w-4xl max-h-[80vh] overflow-auto">
-                  <comp.componente />
+                  <comp.componente
+                    pack="Basic"
+                    priceMonth={"9.99"}
+                    priceYear={"99.99"}
+                    storage="1GB"
+                    users="1 usuario"
+                  />
                 </DialogContent>
               </Dialog>
               <div className="p-4">

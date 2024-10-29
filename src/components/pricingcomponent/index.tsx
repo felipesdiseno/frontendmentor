@@ -6,6 +6,7 @@ interface PricingwToggleProps extends IPricing {
   className?: string;
   isProfessional?: boolean;
   isAnnual?: boolean;
+  send?: string;
 }
 
 function PricingwToggle({

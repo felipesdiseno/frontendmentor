@@ -4,7 +4,7 @@ import PricingwToggle from "@/components/pricingcomponent";
 import { Switch } from "@/components/ui/switch";
 import React, { useState } from "react";
 import IPricing from "../../../interfaces/Iprincing";
-
+import Image from "next/image";
 const cardInformation: IPricing[] = [
   {
     pack: "Basic",
@@ -40,22 +40,32 @@ function PricingPage() {
   };
 
   return (
-    <div className="flex items-center justify-center min-h-screen flex-col bg-blue-300 p-4">
-      <h1 className="font-bold text-3xl text-[#6D708D] mb-8">Our Pricing</h1>
-      <div className="flex flex-row items-center gap-6 mb-8">
-        <h3 className="text-sm font-medium">Annually</h3>
-        <Switch checked={isAnnual} onCheckedChange={handleToggle} />
-        <h3 className="text-sm font-medium">Monthly</h3>
-      </div>
-      <div className="flex flex-col md:flex-row  sm:flex-col gap-6 justify-center items-center">
-        {cardInformation.map((info, index) => (
-          <PricingwToggle
-            key={index}
-            {...info}
-            isProfessional={info.pack === "Professional"}
-            isAnnual={isAnnual}
-          />
-        ))}
+    <div
+      className="relative flex items-center justify-center min-h-screen flex-col p-4 overflow-hidden"
+      style={{
+        backgroundImage: `url("/pricingPage/bg-top.svg"), url("/pricingPage/bg-bottom.svg")`,
+        backgroundPosition: "right -15px top 0px, left -28.5px bottom -70.5px",
+        backgroundSize: "26.5%, 26.5%",
+        backgroundRepeat: "no-repeat",
+      }}
+    >
+      <div className="relative z-10 flex items-center justify-center min-h-screen flex-col p-4">
+        <h1 className="font-bold text-3xl text-[#6D708D] mb-8">Our Pricing</h1>
+        <div className="flex flex-row items-center gap-6 mb-8">
+          <h3 className="text-sm font-medium">Annually</h3>
+          <Switch checked={isAnnual} onCheckedChange={handleToggle} />
+          <h3 className="text-sm font-medium">Monthly</h3>
+        </div>
+        <div className="flex flex-col md:flex-row  sm:flex-col gap-6 justify-center items-center">
+          {cardInformation.map((info, index) => (
+            <PricingwToggle
+              key={index}
+              {...info}
+              isProfessional={info.pack === "Professional"}
+              isAnnual={isAnnual}
+            />
+          ))}
+        </div>
       </div>
     </div>
   );

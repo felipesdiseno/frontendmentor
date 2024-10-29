@@ -67,11 +67,12 @@ function PricingwToggle({
       </div>
       <div className="mt-6">
         <Button
-          className={`w-full py-3 rounded-lg text-sm font-bold transition-colors duration-200 ${
+          className={`w-full py-3 !rounded-md text-sm font-bold transition-colors duration-200 ${
             isProfessional
               ? "bg-white text-[#6C71DE] hover:bg-transparent hover:text-white hover:border-white border-2 border-transparent"
-              : "bg-gradient-to-r from-[#A2A7F0] to-[#696EDD] text-white hover:from-white hover:to-white hover:text-[#6C71DE] hover:border-[#6C71DE] border-2 border-transparent"
+              : "bg-gradient-to-b from-[#A2A7F0] to-[#696EDD] text-white hover:from-white hover:to-white hover:text-[#6C71DE] hover:border-[#6C71DE] border-2 border-transparent"
           }`}
+          style={{ borderRadius: "0.375rem" }}
         >
           LEARN MORE
         </Button>

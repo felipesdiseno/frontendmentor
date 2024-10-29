@@ -1,6 +1,8 @@
+"use client";
 import React from "react";
-
+import { useState } from "react";
 function TimeTRackingC() {
+  const [selected, setSelected] = useState("daily");
   return (
     <div className="flex md:flex-row sm:flex-col gap-6 md:w-[160px] md:h-[272px] sm:w-[240px] sm:h-[74.66px]">
       <div className="flex flex-col bg-[#1C1F4A] rounded-xl">
@@ -16,9 +18,30 @@ function TimeTRackingC() {
           <h2>Jeremy Robson</h2>
         </div>
         <div className="flex md:flex-col sm:flex-row gap-2 sm:justify-between sm:items-center md:items-start p-2">
-          <h3>Daily</h3>
-          <h3>Weekly</h3>
-          <h3>Monthly</h3>
+          <h3
+            onClick={() => setSelected("daily")}
+            className={`cursor-pointer ${
+              selected === "daily" ? "text-white" : "text-[#5746E9]"
+            }`}
+          >
+            Daily
+          </h3>
+          <h3
+            onClick={() => setSelected("weekly")}
+            className={`cursor-pointer ${
+              selected === "weekly" ? "text-white" : "text-[#5746E9]"
+            }`}
+          >
+            Weekly
+          </h3>
+          <h3
+            onClick={() => setSelected("monthly")}
+            className={`cursor-pointer ${
+              selected === "monthly" ? "text-white" : "text-[#5746E9]"
+            }`}
+          >
+            Monthly
+          </h3>
         </div>
       </div>
     </div>

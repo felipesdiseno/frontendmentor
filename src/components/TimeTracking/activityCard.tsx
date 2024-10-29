@@ -1,11 +1,11 @@
 import React from "react";
 import { ITimeTrackingContent } from "../../../interfaces/ITimeTracking";
 
-interface ActicyCardProps extends ITimeTrackingContent {
-  daily: string;
-  weekly: string;
-  monthly: string;
-}
+// interface ActicyCardProps extends ITimeTrackingContent {
+//   daily: string;
+//   weekly: string;
+//   monthly: string;
+// }
 function ActivityCard({
   img,
 

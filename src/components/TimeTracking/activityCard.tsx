@@ -27,7 +27,7 @@ function ActivityCard({
           className="w-[48px] h-[48.63px]"
         />
       </div>
-      <div className="bg-[#1C1F4A] flex flex-col rounded-xl md:w-[160px] md:h-[96px] sm:w-[240px] sm:h-[84px] z-10 absolute bottom-0 left-0 right-0 mx-auto">
+      <div className="bg-[#1C1F4A] flex flex-col hover:cursor-pointer hover: rounded-xl md:w-[160px] md:h-[96px] sm:w-[240px] sm:h-[84px] z-10 absolute bottom-0 left-0 right-0 mx-auto">
         <div className="flex flex-row justify-between items-center w-full p-2 ">
           <h3 className="text-[10px] text-white">{title}</h3>
           <img

@@ -1,8 +1,9 @@
-"use client";
 import React from "react";
-import { useState } from "react";
-function TimeTRackingC() {
-  const [selected, setSelected] = useState("daily");
+import TimeTrackingCProps from "../../../interfaces/ITimeTrackingProps";
+function TimeTRackingC({
+  selectedInterval,
+  setSelectedInterval,
+}: TimeTrackingCProps) {
   return (
     <div className="flex md:flex-row sm:flex-col gap-6 md:w-[160px] md:h-[272px] sm:w-[240px] sm:h-[74.66px] ">
       <div className="flex flex-col bg-[#1C1F4A] rounded-xl">
@@ -19,25 +20,25 @@ function TimeTRackingC() {
         </div>
         <div className="flex md:flex-col sm:flex-row gap-2 sm:justify-between sm:items-center md:items-start p-2">
           <h3
-            onClick={() => setSelected("daily")}
+            onClick={() => setSelectedInterval("daily")}
             className={`cursor-pointer ${
-              selected === "daily" ? "text-white" : "text-[#5746E9]"
+              selectedInterval === "daily" ? "text-white" : "text-[#5746E9]"
             }`}
           >
             Daily
           </h3>
           <h3
-            onClick={() => setSelected("weekly")}
+            onClick={() => setSelectedInterval("weekly")}
             className={`cursor-pointer ${
-              selected === "weekly" ? "text-white" : "text-[#5746E9]"
+              selectedInterval === "weekly" ? "text-white" : "text-[#5746E9]"
             }`}
           >
             Weekly
           </h3>
           <h3
-            onClick={() => setSelected("monthly")}
+            onClick={() => setSelectedInterval("monthly")}
             className={`cursor-pointer ${
-              selected === "monthly" ? "text-white" : "text-[#5746E9]"
+              selectedInterval === "monthly" ? "text-white" : "text-[#5746E9]"
             }`}
           >
             Monthly

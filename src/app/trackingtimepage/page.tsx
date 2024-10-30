@@ -1,16 +1,32 @@
-import TimeTRackingC from "@/components/TimeTracking";
-import React from "react";
+"use client";
+import ActivityCard from "@/components/TimeTracking/activityCard";
 import { IoHome } from "react-icons/io5";
 import Link from "next/link";
-import ActivityCard from "@/components/TimeTracking/activityCard";
-import { timeDailyInfo } from "@/lib/timeTracking";
+import React, { useState } from "react";
+import TimeTRackingC from "@/components/TimeTracking";
+import {
+  timeDailyInfo,
+  timeWeeklyInfo,
+  timeMonthlyInfo,
+} from "@/lib/timeTracking";
+
 function TrackingTimePage() {
+  const [selectedInterval, setSelectedInterval] = useState<string>("daily");
+  const currentData =
+    selectedInterval === "daily"
+      ? timeDailyInfo
+      : selectedInterval === "weekly"
+      ? timeWeeklyInfo
+      : timeMonthlyInfo;
   return (
     <div className="h-screen w-screen bg-[#0F1424] flex items-center justify-center">
       <div className="flex md:flex-row sm:flex-col gap-4">
-        <TimeTRackingC />
+        <TimeTRackingC
+          selectedInterval={selectedInterval}
+          setSelectedInterval={setSelectedInterval}
+        />
         <div className=" grid md:grid-cols-3 sm:grid-cols-1 gap-4 ">
-          {timeDailyInfo.map((info, index) => (
+          {currentData.map((info, index) => (
             <ActivityCard key={index} {...info} />
           ))}
         </div>

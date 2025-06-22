@@ -16,8 +16,8 @@ const config: Config = {
         rubik: ["Rubik", "sans-serif"],
       },
       screens: {
-        // sm: "375px",
-        // md: '1440px'
+        sm: "375px",
+        md: '1440px'
       },
       borderRadius: {
         lg: "var(--radius)",

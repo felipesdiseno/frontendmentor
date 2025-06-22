@@ -13,6 +13,7 @@ const config: Config = {
         outfit: ["Outfit", "sans-serif"],
         youngSerif: ["Young Serif", "serif"],
         manrope: ["Manrope", "sans-serif"],
+        rubik: ["Rubik", "sans-serif"],
       },
       screens: {
         // sm: "375px",

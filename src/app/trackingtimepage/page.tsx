@@ -25,7 +25,7 @@ function TrackingTimePage() {
           selectedInterval={selectedInterval}
           setSelectedInterval={setSelectedInterval}
         />
-        <div className=" grid md:grid-cols-3 sm:grid-cols-1 gap-4 ">
+        <div className=" grid md:grid-cols-3 sm:grid-cols-1 md:gap-x-[30px] md:gap-y-[30px]">
           {currentData.map((info, index) => (
             <ActivityCard key={index} {...info} />
           ))}

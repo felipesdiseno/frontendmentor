@@ -19,13 +19,13 @@ function TrackingTimePage() {
       ? timeWeeklyInfo
       : timeMonthlyInfo;
   return (
-    <div className="h-screen w-screen bg-[#0F1424] flex items-center justify-center">
-      <div className="flex md:flex-row sm:flex-col gap-4">
+    <div className="h-screen w-screen bg-[#0F1424] flex items-start justify-center overflow-y-auto py-4">
+      <div className="flex md:flex-row sm:flex-col gap-[30px]">
         <TimeTRackingC
           selectedInterval={selectedInterval}
           setSelectedInterval={setSelectedInterval}
         />
-        <div className=" grid md:grid-cols-3 sm:grid-cols-1 gap-4 ">
+        <div className=" grid md:grid-cols-3 sm:grid-cols-1 md:gap-x-[30px] md:gap-y-[30px]">
           {currentData.map((info, index) => (
             <ActivityCard key={index} {...info} />
           ))}

@@ -29,7 +29,7 @@ function TimeTRackingC({
       {/* parte inferior targeta */}
       <div className="w-[255px]  rounded-b-[12px] px-6">
         <h3
-          onClick={() => setSelectedInterval("daily")}
+          onClick={() => setSelectedInterval?.("daily")}
           className={`cursor-pointer mt-6 ${
             selectedInterval === "daily"
               ? "text-white text-[18px]"
@@ -39,7 +39,7 @@ function TimeTRackingC({
           Daily
         </h3>
         <h3
-          onClick={() => setSelectedInterval("weekly")}
+          onClick={() => setSelectedInterval?.("weekly")}
           className={`cursor-pointer mt-6  ${
             selectedInterval === "weekly"
               ? "text-white text-[18px]"
@@ -49,7 +49,7 @@ function TimeTRackingC({
           Weekly
         </h3>
         <h3
-          onClick={() => setSelectedInterval("monthly")}
+          onClick={() => setSelectedInterval?.("monthly")}
           className={`cursor-pointer mt-6  ${
             selectedInterval === "monthly"
               ? "text-white text-[18px]"

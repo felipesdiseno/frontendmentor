@@ -1,5 +1,5 @@
 interface TimeTrackingCProps {
-  selectedInterval: string;
-  setSelectedInterval: (interval: string) => void;
+  selectedInterval?: string;
+  setSelectedInterval?: (interval: string) => void;
 }
 export default TimeTrackingCProps;

@@ -96,7 +96,7 @@ const componentes = [
     },
   },
   {
-    nombre: "Vista previa de ---",
+    nombre: "Time tracking",
     componente: TimeTRackingC,
     enlace: "/trackingtimepage",
     descripcion: "Una vista previa de un artículo o entrada de blog",
